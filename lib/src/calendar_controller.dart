@@ -209,10 +209,10 @@ class CalendarController {
       } else if (normalizedDate.isAfter(_getLastDay(includeInvisible: false))) {
         _incrementPage();
       }
+      _focusedDay = normalizedDate;
     }
 
     _selectedDay = normalizedDate;
-    _focusedDay = normalizedDate;
     _updateVisibleDays(isProgrammatic);
 
     if (isProgrammatic && runCallback && _selectedDayCallback != null) {
